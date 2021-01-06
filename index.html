@@ -1,0 +1,59 @@
+
+<!-- Below are some responsive image solutions for dirrent situations -->
+
+<!-- First, a solution that tells the browser to open an image based on resolution -->
+
+<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-480.jpg" 
+     alt="shiny black dog looking pensive" 
+     width="480" height="360"
+     
+     srcset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-960.jpg 2x, 
+	   	  	   https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-1440.jpg 3x, 
+		 				 https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-1920.jpg 4x"
+     >
+
+<!-- Next this solution tells the browser to open an image based on screen width of the view port -->
+
+<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-480.jpg" 
+     alt="shiny black dog looking pensive" 
+     width="480" height="360"
+     
+     srcset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-480.jpg 480w, 
+     https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-960.jpg 960w, 
+	   	https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-1440.jpg 1440w, 
+		 	https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog-1920.jpg 1920w"
+     sizes="(max-width: 480px) 240px,
+            (max-width: 980px) 480px,
+            (max-width: 1440px) 960px,
+            1920px"
+     >
+
+<!-- next is a solution to display a diffrent image altogether when the view port is smaller than 600px -->
+<picture>
+  <source media="(min-width:600px)"
+          srcset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-cropped-720.jpg">
+  <source scrset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-cropped-320.jpg">
+<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-480.jpg" 
+     alt="Dog lying in the sun" 
+     width="480" height="360" >
+</picture>
+
+
+<!-- next is a solution that combines view port and resolution into account when the browser chooses an image -->
+
+<picture>
+  <source media="(min-width:600px)"
+          srcset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-320.jpg  320w,
+                  https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-480.jpg  480w, 
+                  https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-720.jpg  720w,
+                  https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-960.jpg  960w, 
+                  https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-1440.jpg 1440w, 
+                  https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-1920.jpg 1920w" >
+  <source srcset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-cropped-320.jpg 320w,
+                  https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-cropped-480.jpg 480w, 
+                  https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-cropped-720.jpg 720w,
+                  https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-cropped-960.jpg 960w" >
+  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-480.jpg" 
+       alt="smiling black dog"
+       height="360px" width="480px">
+</picture>
